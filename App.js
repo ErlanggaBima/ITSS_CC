@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NativeBaseProvider, VStack } from 'native-base';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import HomeScreen from './screens/Home.js';
+import AfterAddScreen from './screens/After_add.js'
+
+
+function Back() {
+  return(
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Back</Text>
+    </View>
+); 
+}
+
+
+
+
+
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+    <NavigationContainer>
+      <Tab.Navigator >
+        <Tab.Screen name="Back" component={Back}/>
+        <Tab.Screen name="Home" component={HomeScreen} options={{ tabBarBadge: 3 }} />
+        <Tab.Screen name="AfterAdd" component={AfterAddScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
