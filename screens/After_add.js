@@ -6,7 +6,7 @@ const AfterAddScreen = ({ navigation }) => {
     return(
         <View>
             <Center mt="50">
-                <Image source={require('../assets/Illustration.png')} alt="">
+                <Image source={require('../assets/Icons/Illustration.png')} alt="">
                 </Image>
             </Center>
             <Center mb='30' mt='10'>
@@ -16,6 +16,8 @@ const AfterAddScreen = ({ navigation }) => {
             </Center>
             <Button
             mx={60}
+            fontWeight={'bold'}
+            
                 colorScheme="danger"
                 onPress={()=>{
                     console.log('hello') }}
