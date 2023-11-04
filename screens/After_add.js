@@ -16,11 +16,11 @@ const AfterAddScreen = ({ navigation }) => {
             </Center>
             <Button
             mx={60}
-            fontWeight={'bold'}
-            
+            fontWeight={"bold"}
                 colorScheme="danger"
                 onPress={()=>{
                     console.log('hello') }}
+
             >
                 MAKE ANOTHER JOB
             </Button>
@@ -31,7 +31,7 @@ const AfterAddScreen = ({ navigation }) => {
                 onPress={()=>{
                     console.log('hello')
                 }}
-            
+
             >
                 BACK TO HOME
             </Button>

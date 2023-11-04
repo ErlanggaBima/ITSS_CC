@@ -3,9 +3,10 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NativeBaseProvider, VStack } from 'native-base';
-import { Ionicons } from '@expo/vector-icons';
+// import { Ionicons } from '@expo/vector-icons';
 import HomeUserScreen from './screens/HomeUser.js';
 import AfterAddScreen from './screens/After_add.js'
+import AddJobScreen from './screens/AddJob.js'
 
 
 function Back() {
@@ -28,7 +29,7 @@ export default function App() {
     <NativeBaseProvider>
     <NavigationContainer>
       <Tab.Navigator >
-        <Tab.Screen name="Back" component={Back} />
+        <Tab.Screen name="AddJobScreen" component={AddJobScreen} />
         <Tab.Screen name="Home" component={HomeUserScreen} options={{ tabBarBadge: 3 }} />
         <Tab.Screen name="AfterAdd" component={AfterAddScreen} />
       </Tab.Navigator>
