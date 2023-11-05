@@ -1,39 +1,26 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NativeBaseProvider, VStack } from 'native-base';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NativeBaseProvider } from 'native-base';
 // import { Ionicons } from '@expo/vector-icons';
 import HomeUserScreen from './screens/HomeUser.js';
-import AfterAddScreen from './screens/After_add.js'
-import AddJobScreen from './screens/AddJob.js'
+import AfterAddScreen from './screens/After_add.js';
+import AddJobScreen from './screens/AddJob.js';
+import HomeCompanyScreen from './screens/HomeCompany.js';
 
-
-function Back() {
-  return(
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Back</Text>
-    </View>
-); 
-}
-
-
-
-
-
-
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NativeBaseProvider>
-    <NavigationContainer>
-      <Tab.Navigator >
-        <Tab.Screen name="AddJobScreen" component={AddJobScreen} />
-        <Tab.Screen name="Home" component={HomeUserScreen} options={{ tabBarBadge: 3 }} />
-        <Tab.Screen name="AfterAdd" component={AfterAddScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomeUserScreen">
+          <Stack.Screen name="HomeUserScreen" component={HomeUserScreen} options={{ headerShown: true }} />
+          <Stack.Screen name="HomeCompanyScreen" component={HomeCompanyScreen} options={{ headerShown: true }} />
+          <Stack.Screen name="AddJobScreen" component={AddJobScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="AfterAddScreen" component={AfterAddScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }

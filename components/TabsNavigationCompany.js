@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
+
 import { Image } from 'react-native';
 
-
-const TabsNavigation = ({navigation}) => {
+const TabsNavigationCompany= () => {
     return (
         <View style={styles.container} >
             <TouchableOpacity style={styles.tab}>
@@ -12,7 +12,7 @@ const TabsNavigation = ({navigation}) => {
             <TouchableOpacity style={styles.tab}>
                 <Image source={require('../assets/Icons/home.png')} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('HomeCompanyScreen')}>
+            <TouchableOpacity style={styles.tab} >
                 <Image source={require('../assets/Icons/profile.png')} />
             </TouchableOpacity>
         </View>
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TabsNavigation;
+export default TabsNavigationCompany;

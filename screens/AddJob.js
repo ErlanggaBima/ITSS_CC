@@ -1,11 +1,19 @@
-import { View, ScrollView} from 'react-native';
-import { Heading, Container, HStack, Box, Button, TextArea, Text, Input, Checkbox, VStack, Stack} from 'native-base';
+import { View, ScrollView, TouchableOpacity} from 'react-native';
+import { Heading, Container, HStack, Box, Button, TextArea, Text, Input, Checkbox, VStack, Image, } from 'native-base';
 import TabsNavigation from '../components/TabsNavigation';
 
 const AddJobScreen = ({ navigation }) => {
     return(
         <View style={{ flex: 1 }}>
             <ScrollView style={{ flex: 1 }} >
+            <Container paddingTop={45}>
+                <TouchableOpacity onPress={() => navigation.navigate('HomeCompanyScreen')}>
+                    <Image
+                        source={require('../assets/Icons/back.png')} alt="Alternate Text"
+                        style={{ width: 19, height: 15, marginLeft: 20 }}
+                    />
+                </TouchableOpacity>
+            </Container>
              <HStack  space="2" alignItems="center">
                 <Container  my={5} mx={2}>
                 <Heading px={3}>Add a job</Heading>
@@ -85,7 +93,7 @@ const AddJobScreen = ({ navigation }) => {
               variant="subtle"
               colorScheme="green"
               size="lg"
-              
+              onPress={() => navigation.navigate("AfterAddScreen")}
             >
               <Text bold color={"black"}>POST</Text>
             </Button>
